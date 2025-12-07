@@ -27,24 +27,6 @@ fi
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_KEY"
 
-# Copy public key to clipboard
-echo ""
-echo "Copying public key to clipboard..."
-
-# Check if running in WSL
-if grep -qi microsoft /proc/version 2>/dev/null; then
-    cat "$SSH_KEY.pub" | clip.exe
-    echo "✓ Public key copied to clipboard (WSL)"
-else
-    # Install xclip if not present
-    if ! command -v xclip &> /dev/null; then
-        echo "Installing xclip..."
-        sudo apt install -y xclip
-    fi
-    cat "$SSH_KEY.pub" | xclip -selection clipboard
-    echo "✓ Public key copied to clipboard"
-fi
-
 # Display the public key
 echo ""
 echo "Your public key:"
