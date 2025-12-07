@@ -1,4 +1,4 @@
-i# Ubuntu 24.04 Automated Setup Scripts
+# Ubuntu 24.04 Automated Setup Scripts
 
 Complete automated setup for Ubuntu 24.04 with developer tools and configurations.
 
